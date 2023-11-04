@@ -1,0 +1,25 @@
+Navbar
+All Events Page
+All Tickets Page
+Transactions Page
+Create Event Form with validation
+
+address owner;
+string title;
+string description;
+string location;
+uint256 startTime;
+uint256 totalTickets;
+uint256 currentTicketNumber;
+uint256 ticketPrice;
+string image;
+
+Navbar m ek icon daal diyo
+Aur home aur events
+And right m button
+Bs
+Aree left m ek icon chahiye aur home and events page k link
+And right m login button
+Bs
+Tu aisa kr designs bna dhaang se
+M normal si website puri kr deta hu
