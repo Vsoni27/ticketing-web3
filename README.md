@@ -2,6 +2,10 @@
 
 Welcome to the Web3 Ticketing Platform, a groundbreaking project that leverages blockchain technology to redefine the way events are managed, tickets are issued, and the user experience is enhanced. This innovative platform offers users the ability to create events, manage them efficiently, monitor attendance, and provide robust anti-scalping measures.
 
+Web app Depolyed Link -> https://ticketing-web3-vsoni27.vercel.app/
+
+Contract Deployed Link -> https://mumbai.polygonscan.com/address/0xa980fed749e9b7e9fe75ec56218d3ff68265217c
+
 ## Introduction
 
 Traditional ticketing systems have often fallen short in delivering authenticity, security, and fairness. Scalping, fraudulent ticket sales, and lack of transparency have plagued the event industry for far too long. The Web3 Ticketing Platform is here to change that narrative.
