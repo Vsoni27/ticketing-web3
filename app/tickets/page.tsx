@@ -2,8 +2,6 @@
 import blockchain from "@/assets/blockchain.jpg";
 
 const tickets = () => {
-  }
-
   return (
     <>
       <div className='flex flex-col space-y-4 justify-center items-center p-4 mt-4'>
