@@ -1,5 +1,5 @@
 "use client";
-import CustomButton from "@/components/CustomButton";
+import CustomButton from "@/app/components/CustomButton";
 import { Card, Inset, Strong, Text } from "@radix-ui/themes";
 import Link from "next/link";
 import React from "react";

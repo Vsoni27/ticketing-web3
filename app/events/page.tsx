@@ -1,13 +1,20 @@
-"use client";
-import CustomButton from "@/components/CustomButton";
-import { Card, Inset, Strong, Text } from "@radix-ui/themes";
+'use client';
+import { useContract, useContractRead } from "@thirdweb-dev/react";
 import Link from "next/link";
-import React from "react";
-import blockchain  from "@/assets/blockchain.jpg";
+import { useState } from "react";
 
-let arr: string[] = ['1', '2', '3', '4', '5', '6', '7', '8'];
+interface IntObject{
+  _hex : string,
+  type : Boolean,
+}
 
 const events = () => {
+  const {contract} = useContract("0xA980FEd749e9b7E9fe75Ec56218d3FF68265217C");
+  const { data : data, isLoading : isDataLoading } = useContractRead(contract, "getEvents")
+
+  if(!isDataLoading){
+    // setEventData(data);
+    console.log(data);
   return (
     <div className="flex flex-col justify-center items-center p-4">
       <div className="flex justify-start w-[90%] mb-3">
@@ -16,21 +23,23 @@ const events = () => {
         </Link>
       </div>
       <div className="grid grid-cols-4 w-[90%] space-x-3 space-y-3">
-        {arr.map((it) => (
-          <div key={it} className="bg-gray-900 rounded-xl transform transition-transform duration-300 hover:scale-105">
+        {data.map((it :[IntObject, string , string , string , string ,IntObject , IntObject , IntObject , IntObject , string]) =>(
+           <div key={BigInt(it[0]._hex)} className="bg-gray-900 rounded-xl transform transition-transform duration-300 hover:scale-105">
             <div >
-              <img src={blockchain.src} alt="" className="rounded-xl"/>
+              <img src={it[9]} alt="" className="rounded-xl h-[200px]"/>
             </div>
             <div className="p-2 text-ellipsis ">
-              <h1 className="text-xs my-3 text-gray-300">Category</h1>
-              <h1 className="font-semibold">Title</h1>
-              <p className="text-sm text-gray-400">Lorem ipsum dolor sit amet consectetur, adipisicing elit. Blanditiis, dolorum?</p>
+              <h1 className="text-xs my-3 text-gray-300">{it[4]}</h1>
+              <h1 className="font-semibold text-white">{it[2]}</h1>
+              <p className="text-sm text-gray-400 max-h-[200px] overflow-hidden"> {it[3]} </p>
             </div>
+            <Link href={`/events/` + BigInt(it[0]._hex)} className="m-4 text-gray-200 font-semibold">Learn more</Link>
           </div>
         ))}
       </div>
     </div>
-  );
+  )
 };
+}
 
 export default events;
